@@ -245,8 +245,8 @@ command_query_mpu9250_status(uint32_t *args)
     struct mpu9250 *mp = oid_lookup(args[0], command_config_mpu9250);
     uint8_t msg[2];
     uint32_t time1 = timer_read_time();
-    uint8_t regs[] = {AR_FIFO_COUNT_H};
-    i2c_read(mp->i2c->i2c_config, 1, regs, 2, msg);
+    uint8_t reg[] = {AR_FIFO_COUNT_H};
+    i2c_read(mp->i2c->i2c_config, sizeof(reg), reg, sizeof(msg), msg);
     uint32_t time2 = timer_read_time();
     msg[0] = 0x1F & msg[0]; // discard 3 MSB
     uint16_t fifo_bytes = (((uint16_t)msg[0]) << 8) | msg[1];
