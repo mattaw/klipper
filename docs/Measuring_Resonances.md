@@ -55,7 +55,7 @@ SCLK+CS
 #### ADXL345
 
 
-**Note: Many MCUs will work with an ADXL345 in SPI mode(e.g. Pi Pico), wiring
+**Note: Many MCUs will work with an ADXL345 in SPI mode (e.g. Pi Pico), wiring
 and configuration will vary according to your specific board and available
 pins.**
 
